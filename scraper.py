@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup as bs
 import requests
 import selenium
+import time
 from splinter import Browser
 import pandas as pd
 import json
@@ -49,7 +50,10 @@ def jpl():
         JPLurl = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
 
         browser.visit(JPLurl)
+
         browser.click_link_by_partial_text('FULL IMAGE')
+
+        time.sleep(1)
 
         html = browser.html
         soup = bs(html, 'html.parser')
@@ -149,5 +153,3 @@ def Scrape():
     }
 
     return scrape_dict
-
-print(Scrape())
