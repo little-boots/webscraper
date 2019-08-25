@@ -1,3 +1,5 @@
 Instructions
 .ipynb_checkpoints
 requirements.txt
+__pycache__
+test.py
